@@ -9,14 +9,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 	<body>
-	<div id="mySidenav" class="sidenav">
-  		<a href="./../" id="home"><span><i class="fa fa-home"></i> Home </span></a>
-	</div>
 	<section class="section">
     		<div class="container">
 			<div class="columns is-centered">
 				<div class="column is-half has-text-centered">
-      					<h1 class="title is-1">Dashboard</h1>
+      					<h1 class="title is-1">Simple Dashboard</h1>
     				</div>
 			</div>
 		</div>
@@ -38,13 +35,13 @@
 			<div class="columns is-centered">
    				 <div class="tabs is-centered">
     					<ul>
-      						<li id="death-tab" class="">
-        							<a onclick="switchToDeath()">
+      						<li id="one-tab" class="">
+        							<a onclick="switchToOne()">
       	 							<span>Dash 1</span>
       							</a>
       						</li>
-      						<li id="test-tab">
-        							<a onclick="switchToTest()">
+      						<li id="two-tab">
+        							<a onclick="switchToTwo()">
 										<span>Dash 2</span>
       							</a>
       						</li>
@@ -55,19 +52,19 @@
 		</div>
 	</section>
 	<div class="container">
-    		<div id="death-tab-content">
+    		<div id="one-tab-content">
       			<h5 class="title is-5" style="text-align:center;"> Dash 1 </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
-						<iframe width=92% height="500" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" scrolling="no"></iframe>
+						<iframe width=92% height="500" src="https://query.wikidata.org/#%23Cats%2C%20with%20pictures%0A%23defaultView%3AImageGrid%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fpic%0AWHERE%0A%7B%0A%3Fitem%20wdt%3AP31%20wd%3AQ146%20.%0A%3Fitem%20wdt%3AP18%20%3Fpic%0ASERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22%20%7D%0A%7D" scrolling="no"></iframe>
 					</p>
 				</div>
     			</div>
-    		<div class="is-hidden" id="test-tab-content">
+    		<div class="is-hidden" id="two-tab-content">
       			<<h5 class="title is-5" style="text-align:center;"> Dash 2 </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
-						<iframe width=92% height="500" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29"></iframe>
+						<iframe width=92% height="500" src="https://query.wikidata.org/#%23Pokemon%21%0A%23%20Updated%202020-06-17%0A%0A%23%20Gotta%20catch%20%27em%20all%0ASELECT%20DISTINCT%20%3Fpokemon%20%3FpokemonLabel%20%3FpokedexNumber%0AWHERE%0A%7B%0A%20%20%20%20%3Fpokemon%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ3966183%20.%0A%20%20%20%20%3Fpokemon%20p%3AP1685%20%3Fstatement.%0A%20%20%20%20%3Fstatement%20ps%3AP1685%20%3FpokedexNumber%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20pq%3AP972%20wd%3AQ20005020.%0A%20%20%20%20FILTER%20%28%21%20wikibase%3AisSomeValue%28%3FpokedexNumber%29%20%29%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22%20%7D%0A%7D%0AORDER%20BY%20%28%3FpokedexNumber%29"></iframe>
 					</p>
 				</div>
     			</div>
@@ -75,18 +72,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
 
-    function switchToDeath() {
+    function SwitchToOne() {
       removeActive();
       hideAll();
-      $("#death-tab").addClass("is-active");
-      $("#death-tab-content").removeClass("is-hidden");
+      $("#one-tab").addClass("is-active");
+      $("#one-tab-content").removeClass("is-hidden");
     }
 
-    function switchToTest() {
+    function switchToTwo() {
       removeActive();
       hideAll();
-      $("#test-tab").addClass("is-active");
-      $("#test-tab-content").removeClass("is-hidden");
+      $("#two-tab").addClass("is-active");
+      $("#two-tab-content").removeClass("is-hidden");
     }
 
     function removeActive() {
@@ -96,8 +93,8 @@
     }
 
     function hideAll(){
-      $("#death-tab-content").addClass("is-hidden");
-      $("#test-tab-content").addClass("is-hidden");
+      $("#one-tab-content").addClass("is-hidden");
+      $("#two-tab-content").addClass("is-hidden");
     }
 	
   </script>
@@ -110,8 +107,7 @@
         <p><a href="https://www.wikidata.org/"><img src="./../Images/Wikidata_Stamp_Rec_Light.png"></a></p>
         The content is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/">under Creative Commons CC0</a>
       <p> <strong>Dashboard</strong> adapted by <a href="https://www.wikidata.org/wiki/User:TiagoLubiana">TiagoLubiana</a>
-	  from the [COVID-19 in India dashboard](https://wikiproject-india.github.io/covid19dashboard/) designed 
-	  and developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a>
+	  from the <a href="https://wikiproject-india.github.io/covid19dashboard/">COVID-19 in India dashboard </a>
       </p>
     </div>
   </div>
