@@ -75,7 +75,7 @@
 	</section>
 	<div class="container">
     		<div id="death-tab-content">
-      			<h5 class="title is-5" style="text-align:center;"> Death cases in Goa </h5>
+      			<h5 class="title is-5" style="text-align:center;"> Dash 1 </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
 						<iframe width=92% height="500" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Fdeaths%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP1120%20%3Fdeaths%3B%0A%20%20%20%20p%3AP1120%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP1120%20%3Fdeaths.%0A%7D%0AORDER%20BY%20%28%3Fdate%29" scrolling="no"></iframe>
@@ -83,7 +83,7 @@
 				</div>
     			</div>
     		<div class="is-hidden" id="test-tab-content">
-      			<<h5 class="title is-5" style="text-align:center;"> Number of clinical tests done in Goa </h5>
+      			<<h5 class="title is-5" style="text-align:center;"> Dash 2 </h5>
 				<div class="columns is-centered"
 					<p style="text-align: center">
 						<iframe width=92% height="500" src="https://query.wikidata.org/embed.html#%23defaultView%3ALineChart%0ASELECT%20%3Fdate%20%3Ftests%20WHERE%20%7B%0A%20%20wd%3AQ88672484%20wdt%3AP8011%20%3Ftests%3B%0A%20%20%20%20p%3AP8011%20%3Fst.%0A%20%20%3Fst%20pq%3AP585%20%3Fdate%3B%0A%20%20%20%20ps%3AP8011%20%3Ftests.%0A%7D%0AORDER%20BY%20%28%3Fdate%29"></iframe>
@@ -115,41 +115,25 @@
     }
 
     function hideAll(){
-      $("#all-tab-content").addClass("is-hidden");
-      $("#confirmed-tab-content").addClass("is-hidden");
-      $("#recovery-tab-content").addClass("is-hidden");
       $("#death-tab-content").addClass("is-hidden");
       $("#test-tab-content").addClass("is-hidden");
     }
 	
   </script>
   </br>
-  	<section class="section extra">
-		<div class="columns is-centered">
-			<div class="column is-half">
-				<div class="content">
-					<h5 class="title is-5"> Acknowledgement </h5>
-  					<ul>
-					<p>This project aims to visualize the data in the <strong>Wikidata</strong> that are contributed by several volunteers from different language communities, states and regions as part of COVID-19 task force by WikiProject India. This project uses sparql queries to display data from Wikidata and more queries are available <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force/Queries">here</a>. For more details visit <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_India/COVID-19_task_force">COVID-19 Task force India</a>.
-		  			</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <p>
         <p><a href="https://www.wikidata.org/"><img src="./../Images/Wikidata_Stamp_Rec_Light.png"></a></p>
         The content is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/">under Creative Commons CC0</a>
-      <p> <strong>Dashboard</strong> designed and developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a>
+      <p> <strong>Dashboard</strong> adapted by <a href="https://www.wikidata.org/wiki/User:TiagoLubiana">TiagoLubiana</a>
+	  from the [COVID-19 in India dashboard](https://wikiproject-india.github.io/covid19dashboard/) designed 
+	  and developed by <a href="https://www.wikidata.org/wiki/User:Gnoeee">Gnoeee</a>
       </p>
     </div>
   </div>
 </footer>
- <script src="./../state_table_data.js"></script>
-    <script type="text/javascript">
-    var active_state = "Goa";
-</script>
 </body>
 </html>
